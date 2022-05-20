@@ -1,0 +1,15 @@
+modules:
+  jira:globalPage:
+    - key: forge-async-events-lab-hello-world-page
+      resource: main
+      resolver:
+        function: resolver
+      title: forge-async-events-lab
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/build
+app:
+  id: ari:cloud:ecosystem::app/47235c0e-d4b3-49d0-8eef-2daa75fd0ed9
