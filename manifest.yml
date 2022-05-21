@@ -2,10 +2,22 @@ modules:
   jira:globalPage:
     - key: forge-async-events-lab-hello-world-page
       resource: main
+      # resolver for custom UI arquitectures
       resolver:
         function: resolver
       title: forge-async-events-lab
+  # consumer for queues
+  consumer:
+    - key: queue-consumer
+      # Name of the queue for which this consumer will be invoked
+      queue: queue-name
+      resolver:
+        function: consumer-function
+        # resolver function to be called with payload
+        method: event-listener
   function:
+    - key: consumer-function
+      handler: consumer.handler
     - key: resolver
       handler: index.handler
 resources:
