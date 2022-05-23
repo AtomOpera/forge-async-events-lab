@@ -1,11 +1,12 @@
 modules:
   jira:globalPage:
-    - key: forge-async-events-lab-hello-world-page
+    - key: forge-async-events-lab-global-page
       resource: main
       # resolver for custom UI arquitectures
       resolver:
         function: resolver
       title: forge-async-events-lab
+      icon: https://pic.onlinewebfonts.com/svg/img_286633.png
   # consumer for queues
   consumer:
     - key: queue-consumer
@@ -16,10 +17,12 @@ modules:
         # resolver function to be called with payload
         method: event-listener
   function:
-    - key: consumer-function
-      handler: consumer.handler
+      # function for the global page
     - key: resolver
       handler: index.handler
+    # function for the queue
+    - key: consumer-function
+      handler: consumer.handler
 resources:
   - key: main
     path: static/build

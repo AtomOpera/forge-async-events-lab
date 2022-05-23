@@ -3,7 +3,7 @@ const resolver = new Resolver();
 
 resolver.define("event-listener", async ({ payload, context }) => {
   // process the event
-  await new Promise((r) => setTimeout(r, 2000));
+  await new Promise((r) => setTimeout(r, 5000));
   console.log('payload', payload);
   console.log('context', context);
 });
